@@ -9,98 +9,58 @@ func init() {
 
 	beego.GlobalControllerRouter["github.com/document/document-server/controllers:ObjectController"] = append(beego.GlobalControllerRouter["github.com/document/document-server/controllers:ObjectController"],
 		beego.ControllerComments{
-			Method: "Post",
-			Router: `/`,
+			Method:           "Post",
+			Router:           `/`,
 			AllowHTTPMethods: []string{"post"},
-			MethodParams: param.Make(),
-			Params: nil})
+			MethodParams:     param.Make(),
+			Params:           nil})
 
 	beego.GlobalControllerRouter["github.com/document/document-server/controllers:ObjectController"] = append(beego.GlobalControllerRouter["github.com/document/document-server/controllers:ObjectController"],
 		beego.ControllerComments{
-			Method: "Get",
-			Router: `/:objectId`,
+			Method:           "GetAll",
+			Router:           `/`,
 			AllowHTTPMethods: []string{"get"},
-			MethodParams: param.Make(),
-			Params: nil})
+			MethodParams:     param.Make(),
+			Params:           nil})
 
 	beego.GlobalControllerRouter["github.com/document/document-server/controllers:ObjectController"] = append(beego.GlobalControllerRouter["github.com/document/document-server/controllers:ObjectController"],
 		beego.ControllerComments{
-			Method: "GetAll",
-			Router: `/`,
+			Method:           "Get",
+			Router:           `/:objectId`,
 			AllowHTTPMethods: []string{"get"},
-			MethodParams: param.Make(),
-			Params: nil})
+			MethodParams:     param.Make(),
+			Params:           nil})
 
 	beego.GlobalControllerRouter["github.com/document/document-server/controllers:ObjectController"] = append(beego.GlobalControllerRouter["github.com/document/document-server/controllers:ObjectController"],
 		beego.ControllerComments{
-			Method: "Put",
-			Router: `/:objectId`,
+			Method:           "Put",
+			Router:           `/:objectId`,
 			AllowHTTPMethods: []string{"put"},
-			MethodParams: param.Make(),
-			Params: nil})
+			MethodParams:     param.Make(),
+			Params:           nil})
 
 	beego.GlobalControllerRouter["github.com/document/document-server/controllers:ObjectController"] = append(beego.GlobalControllerRouter["github.com/document/document-server/controllers:ObjectController"],
 		beego.ControllerComments{
-			Method: "Delete",
-			Router: `/:objectId`,
+			Method:           "Delete",
+			Router:           `/:objectId`,
 			AllowHTTPMethods: []string{"delete"},
-			MethodParams: param.Make(),
-			Params: nil})
+			MethodParams:     param.Make(),
+			Params:           nil})
 
-	beego.GlobalControllerRouter["github.com/document/document-server/controllers:UserController"] = append(beego.GlobalControllerRouter["github.com/document/document-server/controllers:UserController"],
+	beego.GlobalControllerRouter["github.com/document/document-server/controllers:UploadFile"] = append(beego.GlobalControllerRouter["github.com/document/document-server/controllers:UploadFile"],
 		beego.ControllerComments{
-			Method: "Post",
-			Router: `/`,
+			Method:           "UploadFile",
+			Router:           `/file/upload`,
 			AllowHTTPMethods: []string{"post"},
-			MethodParams: param.Make(),
-			Params: nil})
+			MethodParams:     param.Make(),
+			Params:           nil})
 
 	beego.GlobalControllerRouter["github.com/document/document-server/controllers:UserController"] = append(beego.GlobalControllerRouter["github.com/document/document-server/controllers:UserController"],
 		beego.ControllerComments{
-			Method: "GetAll",
-			Router: `/`,
+			Method:           "Login",
+			Router:           `/`,
 			AllowHTTPMethods: []string{"get"},
-			MethodParams: param.Make(),
-			Params: nil})
-
-	beego.GlobalControllerRouter["github.com/document/document-server/controllers:UserController"] = append(beego.GlobalControllerRouter["github.com/document/document-server/controllers:UserController"],
-		beego.ControllerComments{
-			Method: "Get",
-			Router: `/:uid`,
-			AllowHTTPMethods: []string{"get"},
-			MethodParams: param.Make(),
-			Params: nil})
-
-	beego.GlobalControllerRouter["github.com/document/document-server/controllers:UserController"] = append(beego.GlobalControllerRouter["github.com/document/document-server/controllers:UserController"],
-		beego.ControllerComments{
-			Method: "Put",
-			Router: `/:uid`,
-			AllowHTTPMethods: []string{"put"},
-			MethodParams: param.Make(),
-			Params: nil})
-
-	beego.GlobalControllerRouter["github.com/document/document-server/controllers:UserController"] = append(beego.GlobalControllerRouter["github.com/document/document-server/controllers:UserController"],
-		beego.ControllerComments{
-			Method: "Delete",
-			Router: `/:uid`,
-			AllowHTTPMethods: []string{"delete"},
-			MethodParams: param.Make(),
-			Params: nil})
-
-	beego.GlobalControllerRouter["github.com/document/document-server/controllers:UserController"] = append(beego.GlobalControllerRouter["github.com/document/document-server/controllers:UserController"],
-		beego.ControllerComments{
-			Method: "Login",
-			Router: `/login`,
-			AllowHTTPMethods: []string{"get"},
-			MethodParams: param.Make(),
-			Params: nil})
-
-	beego.GlobalControllerRouter["github.com/document/document-server/controllers:UserController"] = append(beego.GlobalControllerRouter["github.com/document/document-server/controllers:UserController"],
-		beego.ControllerComments{
-			Method: "Logout",
-			Router: `/logout`,
-			AllowHTTPMethods: []string{"get"},
-			MethodParams: param.Make(),
-			Params: nil})
+			MethodParams:     param.Make(),
+			Params:           nil})
 
 }

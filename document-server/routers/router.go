@@ -14,7 +14,7 @@ import (
 )
 
 func init() {
-	ns := beego.NewNamespace("/v1",
+	ns := beego.NewNamespace("/api/v1",
 		beego.NSNamespace("/object",
 			beego.NSInclude(
 				&controllers.ObjectController{},
@@ -24,6 +24,9 @@ func init() {
 			beego.NSInclude(
 				&controllers.UserController{},
 			),
+		),
+		beego.NSInclude(
+			&controllers.UploadFile{},
 		),
 	)
 	beego.AddNamespace(ns)
