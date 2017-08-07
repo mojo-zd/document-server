@@ -21,7 +21,7 @@ type UploadFile struct {
 func (u *UploadFile) UploadFile() {
 	passiveFile := u.saveFile("passive")
 	initiativeFile := u.saveFile("initiative")
-	document.NewDocument(constant.UPLOAD_DIR+passiveFile, constant.UPLOAD_DIR+initiativeFile).SetPassiveColumn(1).SetInitiativeColumn(3).Compare()
+	document.NewDocument(constant.UPLOAD_DIR+passiveFile, constant.UPLOAD_DIR+initiativeFile).SetPassiveColumn(1).SetInitiativeColumn(1).Compare()
 }
 
 func (u *UploadFile) saveFile(name string) (fileName string) {

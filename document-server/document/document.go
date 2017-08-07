@@ -3,6 +3,9 @@ package document
 import (
 	"errors"
 	"fmt"
+	"strconv"
+
+	"math"
 
 	"github.com/document/document-server/constant"
 	"github.com/document/document-server/tools"
@@ -53,38 +56,62 @@ func (d *Document) Compare() (err error) {
 
 	passiveSheet := passiveXls.Sheets[0]
 	initiativeSheet := initiativeXls.Sheets[0]
-	rows := []*xlsx.Row{}
+	positiveRows, reverseRows := []*xlsx.Row{}, []*xlsx.Row{}
 	fileName := ""
 	if len(passiveSheet.Rows) > len(initiativeSheet.Rows) {
-		rows = CompareRow(passiveSheet, initiativeSheet, d.PassiveColumn-1, d.InitiativeColumn-1)
+		positiveRows = ComparePositiveRow(passiveSheet, initiativeSheet, d.PassiveColumn-1, d.InitiativeColumn-1)
+		reverseRows = CompareReverseRow(passiveSheet, initiativeSheet, d.PassiveColumn-1, d.InitiativeColumn-1)
 		fileName = fmt.Sprintf(constant.COMPARED_FILE,
 			tools.RemoveSuffix(d.PassiveFile, []tools.Remove{{Split: "/"}, {Split: ".", Reverse: true}}),
 			tools.RemoveSuffix(d.InitiativeFile, []tools.Remove{{Split: "/"}, {Split: ".", Reverse: true}}),
 		)
+
 	} else {
-		rows = CompareRow(initiativeSheet, passiveSheet, d.InitiativeColumn-1, d.PassiveColumn-1)
+		positiveRows = ComparePositiveRow(initiativeSheet, passiveSheet, d.InitiativeColumn-1, d.PassiveColumn-1)
+		reverseRows = CompareReverseRow(initiativeSheet, passiveSheet, d.InitiativeColumn-1, d.PassiveColumn-1)
+		fileName = fmt.Sprintf(constant.COMPARED_FILE,
+			tools.RemoveSuffix(d.InitiativeFile, []tools.Remove{{Split: "/"}, {Split: ".", Reverse: true}}),
+			tools.RemoveSuffix(d.PassiveFile, []tools.Remove{{Split: "/"}, {Split: ".", Reverse: true}}),
+		)
 	}
 
-	err = GenerateXLSX(constant.UPLOAD_DIR+fileName, rows)
+	err = GenerateXLSX(constant.UPLOAD_DIR+fileName, positiveRows, reverseRows)
 	return
 }
 
-func GenerateXLSX(fileName string, rows []*xlsx.Row) (err error) {
+func GenerateXLSX(fileName string, positiveRows, reverseRows []*xlsx.Row) (err error) {
 	xlsxFile := xlsx.NewFile()
-	sheet, err := xlsxFile.AddSheet("sheet1")
-	if err != nil {
-		log.Fatal("生成xlsx文件失败")
-		return
-	}
 
-	for _, row := range rows {
-		row.Sheet = sheet
+	FillSheet(xlsxFile, positiveRows, "sheet1")
+	if len(reverseRows) > 0 {
+		FillSheet(xlsxFile, reverseRows, "sheet2")
 	}
 	err = xlsxFile.Save(fileName)
 	return
 }
 
-func CompareRow(initiativeSheet, passiveSheet *xlsx.Sheet, initiativeColumn, passiveColumn int) (rows []*xlsx.Row) {
+func FillSheet(xlsxFile *xlsx.File, rows []*xlsx.Row, sheetName string) (err error) {
+	sheet, err := xlsxFile.AddSheet(sheetName)
+	if err != nil {
+		log.Fatalf("生成xlsx Sheet %s 失败", sheetName)
+		return
+	}
+
+	for _, row := range rows {
+		r := sheet.AddRow()
+		for _, cell := range row.Cells {
+			c := r.AddCell()
+			if v, err := strconv.Atoi(cell.Value); err == nil && v < math.MaxInt32 {
+				c.SetValue(v)
+			} else {
+				c.SetValue(cell.Value)
+			}
+		}
+	}
+	return
+}
+
+func ComparePositiveRow(initiativeSheet, passiveSheet *xlsx.Sheet, initiativeColumn, passiveColumn int) (rows []*xlsx.Row) {
 	rows = []*xlsx.Row{}
 	passiveMap := map[string]*xlsx.Row{}
 	for _, row := range passiveSheet.Rows {
@@ -95,6 +122,25 @@ func CompareRow(initiativeSheet, passiveSheet *xlsx.Sheet, initiativeColumn, pas
 
 	for _, row := range initiativeSheet.Rows {
 		if _, ok := passiveMap[row.Cells[initiativeColumn].Value]; !ok {
+			rows = append(rows, row)
+		}
+	}
+
+	return
+}
+
+func CompareReverseRow(initiativeSheet, passiveSheet *xlsx.Sheet, initiativeColumn, passiveColumn int) (rows []*xlsx.Row) {
+	rows = []*xlsx.Row{}
+	initiativeMap := map[string]*xlsx.Row{}
+
+	for _, row := range initiativeSheet.Rows {
+		if _, ok := initiativeMap[row.Cells[initiativeColumn].Value]; !ok {
+			initiativeMap[row.Cells[initiativeColumn].Value] = row
+		}
+	}
+
+	for _, row := range passiveSheet.Rows {
+		if _, ok := initiativeMap[row.Cells[passiveColumn].Value]; !ok {
 			rows = append(rows, row)
 		}
 	}
