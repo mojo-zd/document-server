@@ -28,3 +28,8 @@ func (base *BaseController) ErrorHandler(err error, args ...interface{}) {
 
 	base.CustomAbort(status, message)
 }
+
+func (base *BaseController) ParseFromForm(i interface{}) {
+	err := base.ParseForm(i)
+	base.ErrorHandler(err)
+}
