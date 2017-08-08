@@ -1,6 +1,6 @@
 # document-ui
 
-> document of excel
+> A Vue.js project
 
 ## Build Setup
 
