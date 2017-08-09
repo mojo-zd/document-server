@@ -1,22 +1,18 @@
 <template>
-  <div>
-    <!-- <el-row>
-      <el-col :span="24"><div class="grid-content bg-purple-dark"></div></el-col>
-    </el-row> -->
-    <el-row>
-      <el-col :span="12">
-        <div class="grid-content bg-purple">
-          <h1>h1. Bootstrap heading <small>Secondary text</small></h1>
-          <small>This line of text is meant to be treated as fine print.</small>
-        </div></el-col>
-      <el-col :span="12">
-      </el-col>
-    </el-row>
+  <div class="application row">
+    <app-menu></app-menu>
+    <app-main></app-main>
   </div>
 </template>
 
 <script>
+import AppMenu from './AppMenu'
+import AppMain from './AppMain'
 export default {
+  components: {
+    AppMenu,
+    AppMain
+  },
   name: 'hello',
   data () {
     return {
