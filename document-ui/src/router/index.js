@@ -3,7 +3,6 @@ import Router from 'vue-router'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
 import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
 import '../assets/main.css'
 
 Vue.use(Router)
@@ -13,13 +12,13 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Hello',
-      component: require('../components/Contaner')
+      name: 'dashboard',
+      component: require('../components/documents/Main')
     },
     {
-      path: '/navigation',
-      name: 'Navigation',
-      component: require('../components/Navigation')
+      path: '/document',
+      name: 'documents',
+      component: require('../components/documents/Document')
     }
   ]
 })

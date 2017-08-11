@@ -1,15 +1,17 @@
 <template>
   <div id="app">
     <navigation></navigation>
-    <router-view></router-view>
+    <contaner></contaner>
   </div>
 </template>
 
 <script type="text/javascript">
 import Navigation from './components/Navigation'
+import Contaner from './components/Contaner'
 export default {
   components: {
-    Navigation
+    Navigation,
+    Contaner
   },
   name: 'app'
 }
@@ -24,4 +26,8 @@ export default {
   color: #2c3e50;
    margin-top: -8px; 
 }
+</style>
+
+<style lang="scss">
+@import "./assets/vendor/bootstrap/stylesheets/bootstrap.scss" 
 </style>
