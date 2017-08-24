@@ -26,7 +26,7 @@ func NewDocument(passiveFile, initiativeFile string) *Document {
 	return &Document{PassiveFile: passiveFile, InitiativeFile: initiativeFile, PassiveColumn: default_compare_column, InitiativeColumn: default_compare_column}
 }
 
-func NewDocumentWithColumn(passiveFile, initiativeFile string, passiveColumn, initiativeColumn int) *Document {
+func (d *Document) NewDocumentWithColumn(passiveFile, initiativeFile string, passiveColumn, initiativeColumn int) *Document {
 	return &Document{PassiveFile: passiveFile, InitiativeFile: initiativeFile, PassiveColumn: passiveColumn, InitiativeColumn: initiativeColumn}
 }
 
