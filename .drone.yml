@@ -1,10 +1,10 @@
-#pipeline:
-publish:
-  docker:
-    repo: registry.cn-hangzhou.aliyuncs.com/document/document-server
-    tag: $$BRANCH
-    username: mojozjd
-    password: aliyun_183
+pipeline:
+  publish:
+    docker:
+      repo: registry.cn-hangzhou.aliyuncs.com/document/document-server
+      tag: $$BRANCH
+      username: mojozjd
+      password: aliyun_183
 #    dockerfile: Dockerfile  # Optional override of Dockerfile
 #  build:
 #    image: golang
