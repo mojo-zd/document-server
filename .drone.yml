@@ -1,5 +1,6 @@
 workspace:
   base: /go
+  path: src/github.com/mojo-zd/document-server
 
 pipeline:
   backend:
@@ -8,19 +9,19 @@ pipeline:
       - go build
       - go test
 
-  frontend:
-    image: node:6
-    commands:
-      - npm install
-      - npm test
-
-  publish:
-    image: plugins/docker
-    repo: octocat/hello-world
-    tags: [ 1, 1.1, latest ]
-    registry: index.docker.io
-    username: mojozd
-    password: docker_183
+#  frontend:
+#    image: node:6
+#    commands:
+#      - npm install
+#      - npm test
+#
+#  publish:
+#    image: plugins/docker
+#    repo: octocat/hello-world
+#    tags: [ 1, 1.1, latest ]
+#    registry: index.docker.io
+#    username: mojozd
+#    password: docker_183
 #pipeline:
 #  build:
 #    image: golang
