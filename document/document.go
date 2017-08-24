@@ -3,14 +3,13 @@ package document
 import (
 	"errors"
 	"fmt"
+	"log"
+	"math"
 	"strconv"
 
-	"math"
-
-	"github.com/document/document-server/constant"
-	"github.com/document/document-server/tools"
+	"github.com/document-server/constant"
+	"github.com/document-server/tools"
 	"github.com/tealeg/xlsx"
-	"github.com/wise-registry/src/common/utils/log"
 )
 
 type Document struct {

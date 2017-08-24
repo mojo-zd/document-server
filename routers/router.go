@@ -8,9 +8,8 @@
 package routers
 
 import (
-	"github.com/document/document-server/controllers"
-
 	"github.com/astaxie/beego"
+	"github.com/document-server/controllers"
 )
 
 func init() {

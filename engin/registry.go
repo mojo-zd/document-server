@@ -2,7 +2,7 @@ package engin
 
 import (
 	"github.com/astaxie/beego/orm"
-	"github.com/document/document-server/models"
+	"github.com/document-server/models"
 )
 
 func init() {

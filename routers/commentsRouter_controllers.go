@@ -7,7 +7,7 @@ import (
 
 func init() {
 
-	beego.GlobalControllerRouter["github.com/document/document-server/controllers:ObjectController"] = append(beego.GlobalControllerRouter["github.com/document/document-server/controllers:ObjectController"],
+	beego.GlobalControllerRouter["github.com/document-server/controllers:ObjectController"] = append(beego.GlobalControllerRouter["github.com/document-server/controllers:ObjectController"],
 		beego.ControllerComments{
 			Method:           "Post",
 			Router:           `/`,
@@ -15,7 +15,7 @@ func init() {
 			MethodParams:     param.Make(),
 			Params:           nil})
 
-	beego.GlobalControllerRouter["github.com/document/document-server/controllers:ObjectController"] = append(beego.GlobalControllerRouter["github.com/document/document-server/controllers:ObjectController"],
+	beego.GlobalControllerRouter["github.com/document-server/controllers:ObjectController"] = append(beego.GlobalControllerRouter["github.com/document-server/controllers:ObjectController"],
 		beego.ControllerComments{
 			Method:           "GetAll",
 			Router:           `/`,
@@ -23,7 +23,7 @@ func init() {
 			MethodParams:     param.Make(),
 			Params:           nil})
 
-	beego.GlobalControllerRouter["github.com/document/document-server/controllers:ObjectController"] = append(beego.GlobalControllerRouter["github.com/document/document-server/controllers:ObjectController"],
+	beego.GlobalControllerRouter["github.com/document-server/controllers:ObjectController"] = append(beego.GlobalControllerRouter["github.com/document-server/controllers:ObjectController"],
 		beego.ControllerComments{
 			Method:           "Get",
 			Router:           `/:objectId`,
@@ -31,7 +31,7 @@ func init() {
 			MethodParams:     param.Make(),
 			Params:           nil})
 
-	beego.GlobalControllerRouter["github.com/document/document-server/controllers:ObjectController"] = append(beego.GlobalControllerRouter["github.com/document/document-server/controllers:ObjectController"],
+	beego.GlobalControllerRouter["github.com/document-server/controllers:ObjectController"] = append(beego.GlobalControllerRouter["github.com/document-server/controllers:ObjectController"],
 		beego.ControllerComments{
 			Method:           "Put",
 			Router:           `/:objectId`,
@@ -39,7 +39,7 @@ func init() {
 			MethodParams:     param.Make(),
 			Params:           nil})
 
-	beego.GlobalControllerRouter["github.com/document/document-server/controllers:ObjectController"] = append(beego.GlobalControllerRouter["github.com/document/document-server/controllers:ObjectController"],
+	beego.GlobalControllerRouter["github.com/document-server/controllers:ObjectController"] = append(beego.GlobalControllerRouter["github.com/document-server/controllers:ObjectController"],
 		beego.ControllerComments{
 			Method:           "Delete",
 			Router:           `/:objectId`,
@@ -47,7 +47,7 @@ func init() {
 			MethodParams:     param.Make(),
 			Params:           nil})
 
-	beego.GlobalControllerRouter["github.com/document/document-server/controllers:UploadFile"] = append(beego.GlobalControllerRouter["github.com/document/document-server/controllers:UploadFile"],
+	beego.GlobalControllerRouter["github.com/document-server/controllers:UploadFile"] = append(beego.GlobalControllerRouter["github.com/document-server/controllers:UploadFile"],
 		beego.ControllerComments{
 			Method:           "UploadFile",
 			Router:           `/file/upload`,
@@ -55,7 +55,7 @@ func init() {
 			MethodParams:     param.Make(),
 			Params:           nil})
 
-	beego.GlobalControllerRouter["github.com/document/document-server/controllers:UserController"] = append(beego.GlobalControllerRouter["github.com/document/document-server/controllers:UserController"],
+	beego.GlobalControllerRouter["github.com/document-server/controllers:UserController"] = append(beego.GlobalControllerRouter["github.com/document-server/controllers:UserController"],
 		beego.ControllerComments{
 			Method:           "Login",
 			Router:           `/`,

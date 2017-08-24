@@ -2,6 +2,9 @@ pipeline:
   build:
     image: golang
     commands:
-      - go get
-      - go build
-      - go test
+#      - go build
+      - docker build -t registry.cn-hangzhou.aliyuncs.com/document/document-server:0.0.1
+  publish:
+    image: registry.cn-hangzhou.aliyuncs.com/document/document-server:0.0.1
+    username: mojozjd
+    password: aliyun_183
