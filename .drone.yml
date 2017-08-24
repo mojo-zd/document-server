@@ -8,35 +8,10 @@ pipeline:
     commands:
       - go build
       - go test
-
-#  frontend:
-#    image: node:6
-#    commands:
-#      - npm install
-#      - npm test
-#
-#  publish:
-#    image: plugins/docker
-#    repo: octocat/hello-world
-#    tags: [ 1, 1.1, latest ]
-#    registry: index.docker.io
-#    username: mojozd
-#    password: docker_183
-#pipeline:
-#  build:
-#    image: golang
-#    commands:
-#      - go build
-#
-#  publish:
-#    image: document-server
-#    repo: registry.cn-hangzhou.aliyuncs.com/document/document-server
-#    tags: [ 1.0.0 ]
-#
-#pipeline:
-#  publish:
-#    docker:
-#      repo: registry.cn-hangzhou.aliyuncs.com/document/document-server
-#      tag: $$BRANCH
-#      username: mojozjd
-#      password: aliyun_183
+  docker:
+      image: plugins/docker
+      dockerfile: Dockerfile
+      repo: registry.cn-hangzhou.aliyuncs.com/document/document-server
+      registry: registry.cn-hangzhou.aliyuncs.com
+      username: mojozjd
+      password: aliyun_183
