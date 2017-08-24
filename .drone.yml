@@ -1,28 +1,39 @@
 pipeline:
-  build:
+  backend:
     image: golang
     commands:
+      - go get
       - go build
+      - go test
+
+  frontend:
+    image: node:6
+    commands:
+      - npm install
+      - npm test
 
   publish:
-    image: document-server
-    repo: registry.cn-hangzhou.aliyuncs.com/document/document-server
-    tags: [ 1.0.0 ]
-
-pipeline:
-  publish:
-    docker:
-      repo: registry.cn-hangzhou.aliyuncs.com/document/document-server
-      tag: $$BRANCH
-      username: mojozjd
-      password: aliyun_183
-#    dockerfile: Dockerfile  # Optional override of Dockerfile
+    image: plugins/docker
+    repo: octocat/hello-world
+    tags: [ 1, 1.1, latest ]
+    registry: index.docker.io
+    username: mojozd
+    password: docker_183
+#pipeline:
 #  build:
 #    image: golang
 #    commands:
 #      - go build
-#      - docker build -t registry.cn-hangzhou.aliyuncs.com/document/document-server:0.0.1
+#
 #  publish:
-#    image: registry.cn-hangzhou.aliyuncs.com/document/document-server:0.0.1
-#    username: mojozjd
-#    password: aliyun_183
+#    image: document-server
+#    repo: registry.cn-hangzhou.aliyuncs.com/document/document-server
+#    tags: [ 1.0.0 ]
+#
+#pipeline:
+#  publish:
+#    docker:
+#      repo: registry.cn-hangzhou.aliyuncs.com/document/document-server
+#      tag: $$BRANCH
+#      username: mojozjd
+#      password: aliyun_183
