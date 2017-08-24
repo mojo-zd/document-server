@@ -1,5 +1,5 @@
 workspace:
-  base: /go/src/github.com
+  base: github.com
 
 pipeline:
   backend:
