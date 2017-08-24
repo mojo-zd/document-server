@@ -7,8 +7,8 @@ import (
 	"math"
 	"strconv"
 
-	"github.com/document-server/constant"
-	"github.com/document-server/tools"
+	"github.com/mojo-zd/document-server/constant"
+	"github.com/mojo-zd/document-server/tools"
 	"github.com/tealeg/xlsx"
 )
 

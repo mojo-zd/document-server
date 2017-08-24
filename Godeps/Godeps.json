@@ -1,5 +1,5 @@
 {
-	"ImportPath": "github.com/document-server",
+	"ImportPath": "github.com/mojo-zd/document-server",
 	"GoVersion": "go1.8",
 	"GodepVersion": "v79",
 	"Deps": [

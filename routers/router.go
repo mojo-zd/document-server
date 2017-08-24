@@ -9,7 +9,7 @@ package routers
 
 import (
 	"github.com/astaxie/beego"
-	"github.com/document-server/controllers"
+	"github.com/mojo-zd/document-server/controllers"
 )
 
 func init() {
