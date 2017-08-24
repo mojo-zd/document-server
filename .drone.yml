@@ -14,4 +14,4 @@ pipeline:
       repo: registry.cn-hangzhou.aliyuncs.com/document/document-server
       registry: registry.cn-hangzhou.aliyuncs.com
       username: mojozjd
-      password: aliyun_183
+      password: docker_183
