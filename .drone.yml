@@ -1,10 +1,11 @@
-deploy:
-  docker_image:
-    repo: registry.cn-hangzhou.aliyuncs.com/document/document-server
-    tag: 0.0.1
-    username: mojozjd
-    password: aliyun_183
-    dockerfile: Dockerfile  # Optional override of Dockerfile
+pipeline:
+  deploy:
+    docker_image:
+      repo: registry.cn-hangzhou.aliyuncs.com/document/document-server
+      tag: 0.0.1
+      username: mojozjd
+      password: aliyun_183
+      dockerfile: Dockerfile  # Optional override of Dockerfile
 #  build:
 #    image: golang
 #    commands:
