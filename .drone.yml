@@ -1,9 +1,7 @@
 pipeline:
   build:
-    image: golang
     commands:
-#      - go build
-      - docker build -t registry.cn-hangzhou.aliyuncs.com/document/document-server:0.0.1
+      - docker build -t registry.cn-hangzhou.aliyuncs.com/document/document-server:0.0.1 .
   publish:
     image: registry.cn-hangzhou.aliyuncs.com/document/document-server:0.0.1
     username: mojozjd
