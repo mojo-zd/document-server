@@ -1,5 +1,5 @@
-#workspace:
-#  base: /github.com
+workspace:
+  base: /go
 
 pipeline:
   backend:
