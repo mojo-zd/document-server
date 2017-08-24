@@ -1,4 +1,15 @@
 pipeline:
+  build:
+    image: golang
+    commands:
+      - go build
+
+  publish:
+    image: document-server
+    repo: registry.cn-hangzhou.aliyuncs.com/document/document-server
+    tags: [ 1.0.0 ]
+
+pipeline:
   publish:
     docker:
       repo: registry.cn-hangzhou.aliyuncs.com/document/document-server
