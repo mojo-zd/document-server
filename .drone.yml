@@ -1,4 +1,3 @@
-pipeline:
 deploy:
   docker_image:
     repo: registry.cn-hangzhou.aliyuncs.com/document/document-server
