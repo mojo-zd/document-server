@@ -1,3 +1,6 @@
+workspace:
+  base: /go/src/github.com
+
 pipeline:
   backend:
     image: golang
