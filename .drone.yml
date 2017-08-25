@@ -13,7 +13,7 @@ pipeline:
       dockerfile: Dockerfile
       repo: registry.cn-hangzhou.aliyuncs.com/document/document-server
       registry: registry.cn-hangzhou.aliyuncs.com
-      username: mojozjd
-      password: docker_183
-#      secrets: [ docker_username, docker_password ]
+#      username: mojozjd
+#      password: docker_183
+      secrets: [ docker_username, docker_password ]
       tags: latest
