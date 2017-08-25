@@ -1,4 +1,4 @@
-FROM golang:1.8 as build-step
+FROM registry.cn-hangzhou.aliyuncs.com/libaray/golang:1.8 as build-step
 MAINTAINER excessivespeed@126.com
 
 ADD . /go/src/github.com/document-server
