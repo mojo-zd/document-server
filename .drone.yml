@@ -1,6 +1,6 @@
 workspace:
   base: /go
-  path: src/github.com/mojo-zd/document-server
+  path: src/github.com/document-server
 
 pipeline:
   backend:

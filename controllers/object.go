@@ -3,7 +3,7 @@ package controllers
 import (
 	"encoding/json"
 
-	"github.com/mojo-zd/document-server/models"
+	"github.com/document-server/models"
 
 	"github.com/astaxie/beego"
 )

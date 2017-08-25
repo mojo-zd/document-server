@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/mojo-zd/document-server/constant"
-	"github.com/mojo-zd/document-server/document"
+	"github.com/document-server/constant"
+	"github.com/document-server/document"
 )
 
 type UploadFile struct {

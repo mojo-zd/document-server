@@ -1,7 +1,7 @@
 package main
 
 import (
-	_ "github.com/mojo-zd/document-server/routers"
+	_ "github.com/document-server/routers"
 
 	"github.com/astaxie/beego"
 )
