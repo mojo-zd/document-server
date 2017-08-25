@@ -7,7 +7,7 @@ WORKDIR /go/src/github.com/document-server
 RUN GOOS=linux GOARCH=amd64 go build -v -o /go/bin/document-server
 
 
-FROM alpine
+FROM registry.cn-hangzhou.aliyuncs.com/libaray/alpine
 COPY --from=build-step /go/bin/document-server /usr/bin/document-server
 ENTRYPOINT ["/usr/bin/document-server"]
 EXPOSE 8080
