@@ -13,5 +13,5 @@ pipeline:
       dockerfile: Dockerfile
       repo: registry.cn-hangzhou.aliyuncs.com/document/document-server
       registry: registry.cn-hangzhou.aliyuncs.com
-      secrets: [ ali_user, ali_password ]
+      secrets: [ docker_username, docker_password ]
       tags: latest
