@@ -3,12 +3,12 @@ workspace:
   path: src/github.com/document-server
 
 pipeline:
-  backend:
-    image: registry.cn-hangzhou.aliyuncs.com/libaray/golang:1.8
-    commands:
-      - go build
-      - go test
-  docker:
+#  backend:
+#    image: registry.cn-hangzhou.aliyuncs.com/libaray/golang:1.8
+#    commands:
+#      - go build
+#      - go test
+  build-image:
       image: plugins/docker
       dockerfile: Dockerfile
       repo: registry.cn-hangzhou.aliyuncs.com/document/document-server
