@@ -4,7 +4,7 @@ workspace:
 
 pipeline:
   backend:
-    image: golang
+    image: registry.cn-hangzhou.aliyuncs.com/libaray/golang:1.8
     commands:
       - go build
       - go test
@@ -15,3 +15,4 @@ pipeline:
       registry: registry.cn-hangzhou.aliyuncs.com
       username: mojozjd
       password: docker_183
+      tags: latest
