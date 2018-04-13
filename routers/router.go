@@ -10,6 +10,7 @@ package routers
 import (
 	"github.com/astaxie/beego"
 	"github.com/document-server/controllers"
+	_ "github.com/document-server/filter"
 )
 
 func init() {
@@ -24,8 +25,11 @@ func init() {
 				&controllers.UserController{},
 			),
 		),
+		//beego.NSInclude(
+		//	&controllers.UploadFile{},
+		//),
 		beego.NSInclude(
-			&controllers.UploadFile{},
+			&controllers.TempFile{},
 		),
 	)
 	beego.AddNamespace(ns)

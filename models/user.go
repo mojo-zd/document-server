@@ -1,8 +1,8 @@
 package models
 
 type User struct {
-	ID       int64
-	Username string
+	Id       int64
+	Name     string
 	Password string
 	Salt     string
 }

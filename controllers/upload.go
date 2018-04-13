@@ -1,9 +1,6 @@
 package controllers
 
 import (
-	"fmt"
-	"net/http"
-
 	"github.com/document-server/constant"
 	"github.com/document-server/document"
 )
@@ -31,15 +28,4 @@ func (u *UploadFile) UploadFile() {
 	passiveFile := u.saveFile("passive")
 	initiativeFile := u.saveFile("initiative")
 	document.NewDocument(constant.UPLOAD_DIR+passiveFile, constant.UPLOAD_DIR+initiativeFile).SetPassiveColumn(1).SetInitiativeColumn(1).Compare()
-}
-
-func (u *UploadFile) saveFile(name string) (fileName string) {
-	_, header, err := u.GetFile(name)
-	u.ErrorHandler(err)
-
-	fileName = header.Filename
-	err = u.SaveToFile(name, constant.UPLOAD_DIR+header.Filename)
-	u.ErrorHandler(err, http.StatusUnprocessableEntity, fmt.Sprintf("保存临时文件 %s 失败", header.Filename))
-
-	return
 }

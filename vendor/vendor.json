@@ -1,0 +1,77 @@
+{
+	"comment": "",
+	"ignore": "",
+	"package": [
+		{
+			"checksumSHA1": "LQbW7fFT+/r7HNI3PG5DwshCgsA=",
+			"origin": "github.com/document-server/vendor/github.com/astaxie/beego",
+			"path": "github.com/astaxie/beego",
+			"revision": "3162da131da68f38e85765781c9d1cc419963e67",
+			"revisionTime": "2017-09-08T22:29:59Z"
+		},
+		{
+			"checksumSHA1": "p7pOgCzAeuGZfL5dFZFCn5j/2Dk=",
+			"origin": "github.com/document-server/vendor/github.com/astaxie/beego/config",
+			"path": "github.com/astaxie/beego/config",
+			"revision": "3162da131da68f38e85765781c9d1cc419963e67",
+			"revisionTime": "2017-09-08T22:29:59Z"
+		},
+		{
+			"checksumSHA1": "unihv8ymrHmn/ozfoKE3wg7mAHo=",
+			"origin": "github.com/document-server/vendor/github.com/astaxie/beego/context",
+			"path": "github.com/astaxie/beego/context",
+			"revision": "3162da131da68f38e85765781c9d1cc419963e67",
+			"revisionTime": "2017-09-08T22:29:59Z"
+		},
+		{
+			"checksumSHA1": "4pHyya5dISJhMNDQyI0lu5X0pg4=",
+			"origin": "github.com/document-server/vendor/github.com/astaxie/beego/context/param",
+			"path": "github.com/astaxie/beego/context/param",
+			"revision": "3162da131da68f38e85765781c9d1cc419963e67",
+			"revisionTime": "2017-09-08T22:29:59Z"
+		},
+		{
+			"checksumSHA1": "Nx9dKuRvpEeNHhnpTb0yVy1t/JE=",
+			"origin": "github.com/document-server/vendor/github.com/astaxie/beego/grace",
+			"path": "github.com/astaxie/beego/grace",
+			"revision": "3162da131da68f38e85765781c9d1cc419963e67",
+			"revisionTime": "2017-09-08T22:29:59Z"
+		},
+		{
+			"checksumSHA1": "5I634iPeDlSRAe+6J6P/uQlKg+w=",
+			"origin": "github.com/document-server/vendor/github.com/astaxie/beego/logs",
+			"path": "github.com/astaxie/beego/logs",
+			"revision": "3162da131da68f38e85765781c9d1cc419963e67",
+			"revisionTime": "2017-09-08T22:29:59Z"
+		},
+		{
+			"checksumSHA1": "PMJUQ+G6UaF17dYC1S0ijiXdby4=",
+			"origin": "github.com/document-server/vendor/github.com/astaxie/beego/session",
+			"path": "github.com/astaxie/beego/session",
+			"revision": "3162da131da68f38e85765781c9d1cc419963e67",
+			"revisionTime": "2017-09-08T22:29:59Z"
+		},
+		{
+			"checksumSHA1": "mnpQ3CkiBEqMpUWoGflDS1Nl2sg=",
+			"origin": "github.com/document-server/vendor/github.com/astaxie/beego/toolbox",
+			"path": "github.com/astaxie/beego/toolbox",
+			"revision": "3162da131da68f38e85765781c9d1cc419963e67",
+			"revisionTime": "2017-09-08T22:29:59Z"
+		},
+		{
+			"checksumSHA1": "Sq2SPs89pTdnOPEy508MYWw2xqQ=",
+			"origin": "github.com/document-server/vendor/github.com/astaxie/beego/utils",
+			"path": "github.com/astaxie/beego/utils",
+			"revision": "3162da131da68f38e85765781c9d1cc419963e67",
+			"revisionTime": "2017-09-08T22:29:59Z"
+		},
+		{
+			"checksumSHA1": "c737gfWKp1ZKnbj3ceXO/ZRCdqg=",
+			"origin": "github.com/document-server/vendor/github.com/tealeg/xlsx",
+			"path": "github.com/tealeg/xlsx",
+			"revision": "887b805086ab2016cdcdbb7a3cab8c0b867e5a64",
+			"revisionTime": "2016-09-13T09:58:47Z"
+		}
+	],
+	"rootPath": "github.com/document-server"
+}

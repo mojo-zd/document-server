@@ -1,6 +1,7 @@
 package main
 
 import (
+	_ "github.com/document-server/engine"
 	_ "github.com/document-server/routers"
 
 	"github.com/astaxie/beego"
@@ -11,5 +12,6 @@ func main() {
 		beego.BConfig.WebConfig.DirectoryIndex = true
 		beego.BConfig.WebConfig.StaticDir["/swagger"] = "swagger"
 	}
-	beego.Run()
+
+	beego.Run(":8002")
 }

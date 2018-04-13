@@ -4,6 +4,8 @@ import (
 	"math/rand"
 	"strings"
 	"time"
+
+	uuid2 "github.com/pborman/uuid"
 )
 
 var (
@@ -36,4 +38,27 @@ func RemoveSuffix(str string, removes []Remove) string {
 		}
 	}
 	return str
+}
+
+func NewUUID() (uuid string) {
+	uuid = uuid2.NewUUID().String()
+	return
+}
+
+func Suffix(str, symbol string) (s string) {
+	if !strings.Contains(str, symbol) {
+		s = str
+		return
+	}
+	s = str[strings.Index(str, symbol):]
+	return
+}
+
+func Substring(str, symbol string) (s string) {
+	if !strings.Contains(str, symbol) {
+		s = str
+		return
+	}
+	s = str[:strings.Index(str, symbol)]
+	return
 }
